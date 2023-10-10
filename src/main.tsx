@@ -12,6 +12,7 @@ const firebaseConfig = {
    appId: import.meta.env.VITE_APP_ID,
  };
 const app = initializeApp(firebaseConfig)
+console.log(app);
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <App />
