@@ -9,8 +9,6 @@
 
 import {onRequest} from "firebase-functions/v2/https";
 import * as logger from "firebase-functions/logger";
-console.log(onRequest);
-console.log(logger);
 
 // Start writing functions
 // https://firebase.google.com/docs/functions/typescript
