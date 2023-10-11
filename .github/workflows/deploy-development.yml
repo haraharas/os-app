@@ -29,4 +29,4 @@ jobs:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_OS_APP_DEV_7347B }}'
           channelId: live
-          projectId: app-dev-7347b
+          projectId: os-app-dev-7347b
