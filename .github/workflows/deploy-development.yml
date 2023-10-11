@@ -3,7 +3,7 @@ name: Deploy to Firebase Hosting on merge
 on:
   push:
     branches:
-      - main
+      - develop
 
 jobs:
   build_and_deploy:
@@ -15,20 +15,21 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 16
+
       - name: install
-       run: |
-         npm install
-         npm install -g firebase-tools
+        run: |
+          npm install
+          npm install -g firebase-tools
       - name: lint and test
         run: |
           npm run lint
           npm run test
 
-      - run: npm ci && npm run build
+      - run: npm run build:dev
       - name: Deploy to Firebase Hosting
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
-          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_OS_APP_B8E42 }}'
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_OS_APP_DEV_7347B }}'
           channelId: live
-          projectId: os-app-b8e42
+          projectId: app-dev-7347b
